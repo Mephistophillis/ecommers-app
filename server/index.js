@@ -17,6 +17,9 @@ app.prepare().then(() => {
     return app.render(req, res, '/b', req.query)
   })
 
+  // api routes
+  require('./api')(server)
+
   server.all('*', (req, res) => {
     return handle(req, res)
   })
